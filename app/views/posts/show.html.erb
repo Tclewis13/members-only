@@ -1,4 +1,9 @@
 <h1><%= @post.title %></h1>
+<h3><%if user_signed_in? %>
+  By <%= User.find(@post.user_id).email%>
+<% else%>
+  By Anonymous
+<%end%></h3>
 
 <p><%= @post.body %></p>
 
